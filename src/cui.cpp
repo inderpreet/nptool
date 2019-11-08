@@ -11,7 +11,6 @@
 int text_input(){
     std::string in1;
     int selection{0};
-    std::cout << "New Project Tool\nSelect Option\n\n";
     std::cout << "1. Blank Project\n";
     std::cout << "x. Exit\n\n";
 

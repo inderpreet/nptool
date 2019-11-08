@@ -14,14 +14,15 @@ const char *cptrTitle = "New Project Tool";
 
 int main(int argc, char *argv[]) {
     //printHello();   //! Test setup by printing hello world.
-    std::cout << cptrTitle << " \nVersion " << APP_VERSION_MAJOR << "." << APP_VERSION_MINOR << std::endl;
+    std::cout << cptrTitle << "\nVersion " << APP_VERSION_MAJOR << "." << APP_VERSION_MINOR << std::endl << std::endl;
+
     if (argc > 1){
         Parser parser(argc, argv);
         if ( parser.findFlag("-h", "-help") == true ){
-            fprintf(stdout, "%s Version %d.%d\n",
-                cptrTitle,
-                APP_VERSION_MAJOR,
-                APP_VERSION_MINOR);
+            // fprintf(stdout, "%s Version %d.%d\n",
+            //     cptrTitle,
+            //     APP_VERSION_MAJOR,
+            //     APP_VERSION_MINOR);
             std::cout << "Usage: \"nptool [OPTION...]\"" << std::endl;
             std::cout << "Example Usage: \"nptool -n Project_Title -t cpp\"" << std::endl << std::endl;
             std::cout << "\t-n\t Name of the Project" << std::endl;

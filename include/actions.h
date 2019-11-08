@@ -11,6 +11,8 @@
 #include <iostream>
 #include <string>
 #include <assert.h>
+#include <vector>
+
 
 typedef enum ProjectTypes{
             BLANK, CPP_CMAKE, CPP_OPENCV, PYTHON3_DOCKER, PYTHON3_FLASK
