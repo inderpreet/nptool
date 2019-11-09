@@ -23,6 +23,7 @@ int main(int argc, char *argv[]) {
             //     cptrTitle,
             //     APP_VERSION_MAJOR,
             //     APP_VERSION_MINOR);
+            std::cout << argv[0];
             std::cout << "Usage: \"nptool [OPTION...]\"" << std::endl;
             std::cout << "Example Usage: \"nptool -n Project_Title -t cpp\"" << std::endl << std::endl;
             std::cout << "\t-n\t Name of the Project" << std::endl;
@@ -38,7 +39,10 @@ int main(int argc, char *argv[]) {
         // }
 
         Actions actions(parser.getAllArgs());
-        actions.showAllArgs();
+        //actions.showAllArgs();
+        //actions.read_template();
+        std::string name{"New Project"};
+        actions.create_blank_project(name);
     } else {    // No Arguments Found
         text_input();
     }

@@ -12,6 +12,8 @@ int text_input(){
     std::string in1;
     int selection{0};
     std::cout << "1. Blank Project\n";
+    std::cout << "2. cpp cmake Project\n";
+    std::cout << "3. cpp OpenCV Project\n";
     std::cout << "x. Exit\n\n";
 
     std::cout << "Enter Selection : ";
