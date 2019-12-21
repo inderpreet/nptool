@@ -33,7 +33,10 @@ int main(int argc, char *argv[]) {
         // }
 
         Actions actions(parser.getAllArgs());
-        actions.showAllArgs();
+        //actions.showAllArgs();
+        //actions.read_template();
+        std::string name{"New Project"};
+        actions.create_blank_project(name);
     } else {    // No Arguments Found
         // text_input(); // Depreciated
         // UserInput userInput;

@@ -11,12 +11,24 @@ cmake_minimum_required(VERSION 2.8)
 # Project Name
 project( nptool )
 
-set( CMAKE_C_COMPILER "gcc" )
-# set( CMAKE_BUILD_TYPE Debug )
-set( CMAKE_CXX_FLAGS "-Wall -m64 -O3 -std=c++14 -pedantic -v -pthread " ) 
+# export CC=/usr/bin/clang
+# export CXX=/usr/bin/clang++
+
+#SET (CMAKE_C_COMPILER                   "/usr/bin/clang-6.0" )
+SET (CMAKE_C_COMPILER                   "/usr/bin/gcc" )
+SET (CMAKE_C_FLAGS_INIT                 "-Wall -std=c99")
+SET (CMAKE_C_FLAGS_DEBUG_INIT           "-g")
+SET (CMAKE_C_FLAGS_MINSIZEREL_INIT      "-Os -DNDEBUG")
+SET (CMAKE_C_FLAGS_RELEASE_INIT         "-O3 -DNDEBUG")
+SET (CMAKE_C_FLAGS_RELWITHDEBINFO_INIT  "-O2 -g")
+
+#SET (CMAKE_CXX_COMPILER                 "/usr/bin/clang++-6.0")
+SET (CMAKE_CXX_COMPILER                 "/usr/bin/g++")
+# set(CMAKE_BUILD_TYPE                  Debug )
+SET (CMAKE_CXX_FLAGS                    "-Wall -m64 -O3 -std=c++14 -pedantic -v -pthread " ) 
 # -fno-omit-frame-pointer -g -v -finstrument-functions -DWITH_OPENCL=OFF" )
-# set(CMAKE_CXX_STANDARD 11)
-# set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
+# SET(CMAKE_CXX_STANDARD                11)
+# set(CMAKE_CXX_STANDARD_REQUIRED       TRUE)
 
 # The version number
 set (APP_VERSION_MAJOR 1)
@@ -29,8 +41,7 @@ configure_file(
 )
 ## use #define APP_VERSION_MAJOR @APP_VERSION_MAJOR@ in the app_config.h.in file
 
-
-SET(OpenCV_DIR /usr/local/Cellar/opencv/4.0.1/)
+#SET(OpenCV_DIR /usr/local/Cellar/opencv/4.0.1/)
 
 ## Find package OpenCV
 # find_package( OpenCV REQUIRED )
