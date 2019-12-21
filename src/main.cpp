@@ -41,13 +41,9 @@ int main(int argc, char *argv[]) {
         // userInput.userProjectType();
         Nptool nptool;
         nptool.printPath();
+        nptool.createIfDoesNotExist();
 
-        if( nptool.checkPath() ){
-            std::cout << "\nexist";
-        } else {
-            std::cout << "\ndoes not exits";
-        }
-
+        nptool.copyFile("README_template.md", "README.md");
         std::cout << std::endl;
 
     }
