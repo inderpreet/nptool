@@ -1,8 +1,6 @@
 /**
 *	@file   parseArgs.cpp
 *	@brief	This file contains the argument parser class
-*
-*
 *	@author Inderpreet Singh
 */
 
@@ -18,7 +16,7 @@ Parser::Parser(int argc, char **argv) : argc{ std::move(argc)}, argv{ std::move(
 }
 
 /**
- * @brief   Function to print all arguments
+ * @brief   Function to print all arguments: Testing Function
  */ 
 void Parser::printAllArgs(){
     for (const std::string str: allargs){
@@ -28,6 +26,8 @@ void Parser::printAllArgs(){
 
 /**
  * @brief   Function to find a specific flag
+ * @param   singleChar is the single character to find
+ * @param   longName is the alternative Long Name
  */ 
 bool Parser::findFlag(std::string singleChar, std::string longName){
     bool bFlagFound = false;

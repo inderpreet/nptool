@@ -9,6 +9,10 @@
 
 typedef void(* f_void)(void);
 
+/**
+ * *******************************************************
+ * Experimental code
+ */ 
 void testFunction(){
     std::cout << "Test Function" << std::endl;
 }
@@ -20,7 +24,9 @@ void testerFunction(void (*fn)(void)){
 void testerAgain(f_void fn){
     (*fn)();
 }
-
+/**
+ * *********************************************************
+ */
 // usage
 // testerFunction(f1_ptr);
 // testerAgain(f1_ptr);

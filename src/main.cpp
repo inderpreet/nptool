@@ -8,6 +8,8 @@
 #include <parseArgs.h>
 #include "cui.h"
 #include "actions.h"
+#include "help.h"
+#include "nptool.h"
 
 const char *cptrTitle = "New Project Tool";
 
@@ -18,20 +20,13 @@ int main(int argc, char *argv[]) {
 
     if (argc > 1){
         Parser parser(argc, argv);
-        if ( parser.findFlag("-h", "-help") == true ){
-            // fprintf(stdout, "%s Version %d.%d\n",
-            //     cptrTitle,
-            //     APP_VERSION_MAJOR,
-            //     APP_VERSION_MINOR);
-            std::cout << "Usage: \"nptool [OPTION...]\"" << std::endl;
-            std::cout << "Example Usage: \"nptool -n Project_Title -t cpp\"" << std::endl << std::endl;
-            std::cout << "\t-n\t Name of the Project" << std::endl;
-            std::cout << "\t-t\t Type of the project" << std::endl;
+        if ( parser.findFlag("-h", "--help") == true ){
+            print_help();
         }
         
-        // if ( parser.findFlag("-n", "-name") == true ){
-        //     std::cout << std::endl << "Found name" << std::endl;
-        // }
+        if ( parser.findFlag("-n", "-name") == true ){
+            std::cout << std::endl << "Found name" << std::endl;
+        }
         
         // if ( parser.findFlag("-t", "-type") == true ){
         //     std::cout << std::endl << "Found type" << std::endl;
@@ -40,7 +35,21 @@ int main(int argc, char *argv[]) {
         Actions actions(parser.getAllArgs());
         actions.showAllArgs();
     } else {    // No Arguments Found
-        text_input();
+        // text_input(); // Depreciated
+        // UserInput userInput;
+        // userInput.userProjectName();
+        // userInput.userProjectType();
+        Nptool nptool;
+        nptool.printPath();
+
+        if( nptool.checkPath() ){
+            std::cout << "\nexist";
+        } else {
+            std::cout << "\ndoes not exits";
+        }
+
+        std::cout << std::endl;
+
     }
     return 0;
 }
